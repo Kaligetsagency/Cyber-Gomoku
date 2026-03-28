@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neon Strike</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">NEON STRIKE</h1>
+        
+        <div id="menu-ui">
+            <button class="btn ai-btn" onclick="startAIGame()">Engage AI</button>
+            <div class="divider">OR P2P NETWORK</div>
+            <button class="btn host-btn" onclick="hostGame()">Host Node</button>
+            <div id="host-info" class="hidden">
+                <p>Node ID:</p>
+                <code id="peer-id-display">Generating...</code>
+                <p class="small">Share ID with your opponent.</p>
+            </div>
+            <div class="join-section">
+                <input type="text" id="join-id" placeholder="Enter Node ID">
+                <button class="btn join-btn" onclick="joinGame()">Connect</button>
+            </div>
+        </div>
+
+        <div id="game-ui" class="hidden">
+            <div class="status-panel">
+                <div class="p1-text">P1 (CRIMSON)</div>
+                <div id="turn-display">Waiting...</div>
+                <div class="p2-text">P2 (COBALT)</div>
+            </div>
+            <div id="board"></div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2 id="result-title">VICTORY</h2>
+            <p id="result-message">Alignment Achieved</p>
+            <button class="btn ai-btn" onclick="resetToMenu()">Return to Main</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
